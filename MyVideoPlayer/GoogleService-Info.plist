@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1090459390700-kbk0f1i59m0bm0c7todph2k6bqpg62gf.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1090459390700-kbk0f1i59m0bm0c7todph2k6bqpg62gf</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAbv3DyhU5vVrL0tcIpIaSg80irem-eTG0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1090459390700</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.hello.MyVideoPlayer</string>
+	<key>PROJECT_ID</key>
+	<string>my-video-player-87244</string>
+	<key>STORAGE_BUCKET</key>
+	<string>my-video-player-87244.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1090459390700:ios:0471a8c15db9f9640c8bc9</string>
+	<key>DATABASE_URL</key>
+	<string>https://my-video-player-87244.firebaseio.com</string>
+</dict>
+</plist>
