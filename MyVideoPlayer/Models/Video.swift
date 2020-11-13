@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Video: Codable {
+struct Video: Codable {
     var name: String
     var fileType: String?
     var url: String?

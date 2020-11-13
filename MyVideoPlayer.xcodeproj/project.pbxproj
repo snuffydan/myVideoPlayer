@@ -17,6 +17,10 @@
 		2FABD09A255E2F2200796B54 /* VideoNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FABD099255E2F2200796B54 /* VideoNetworkManager.swift */; };
 		2FABD09E255E338100796B54 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FABD09D255E338100796B54 /* Reachability.swift */; };
 		2FABD0A6255E368700796B54 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FABD0A5255E368700796B54 /* ActivityIndicator.swift */; };
+		2FABD0D4255E4FB400796B54 /* VideoPlayerDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2FABD0D2255E4FB400796B54 /* VideoPlayerDB.xcdatamodeld */; };
+		2FABD0D7255E50BD00796B54 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FABD0D6255E50BD00796B54 /* SignUpViewController.swift */; };
+		2FABD0DB255E51D800796B54 /* CoreDataMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FABD0DA255E51D800796B54 /* CoreDataMethods.swift */; };
+		2FABD0E7255E5A5D00796B54 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FABD0E6255E5A5D00796B54 /* InitialViewController.swift */; };
 		2FDA47A0255D58E900107E54 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA479F255D58E800107E54 /* Helper.swift */; };
 		2FDA47A4255D598700107E54 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA47A3255D598700107E54 /* BaseViewController.swift */; };
 		2FDA47A8255D59D300107E54 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA47A7255D59D300107E54 /* GlobalConstants.swift */; };
@@ -40,6 +44,10 @@
 		2FABD099255E2F2200796B54 /* VideoNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoNetworkManager.swift; sourceTree = "<group>"; };
 		2FABD09D255E338100796B54 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		2FABD0A5255E368700796B54 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		2FABD0D3255E4FB400796B54 /* VideoPlayerDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VideoPlayerDB.xcdatamodel; sourceTree = "<group>"; };
+		2FABD0D6255E50BD00796B54 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		2FABD0DA255E51D800796B54 /* CoreDataMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMethods.swift; sourceTree = "<group>"; };
+		2FABD0E6255E5A5D00796B54 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		2FDA479F255D58E800107E54 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		2FDA47A3255D598700107E54 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		2FDA47A7255D59D300107E54 /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
@@ -83,6 +91,7 @@
 		2F7DAFBA255CE6FE00B64E6A /* MyVideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				2FABD0A8255E4DC400796B54 /* Database */,
 				2FABD07D255E2AE400796B54 /* Models */,
 				2FABD06B255E256100796B54 /* NetworkManagers */,
 				2FDA47B4255D7C6D00107E54 /* GoogleService-Info.plist */,
@@ -112,6 +121,7 @@
 				2F7DAFD7255CEAB400B64E6A /* Common */,
 				2F7DAFD3255CEA9F00B64E6A /* LoginViewController.swift */,
 				2FDA47AF255D5D4600107E54 /* VideoPlayerViewController.swift */,
+				2FABD0D6255E50BD00796B54 /* SignUpViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -120,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				2FDA47A3255D598700107E54 /* BaseViewController.swift */,
+				2FABD0E6255E5A5D00796B54 /* InitialViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -157,9 +168,26 @@
 			path = NetworkReachability;
 			sourceTree = "<group>";
 		};
+		2FABD0A8255E4DC400796B54 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				2FABD0D2255E4FB400796B54 /* VideoPlayerDB.xcdatamodeld */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		2FABD0D9255E51C400796B54 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				2FABD0DA255E51D800796B54 /* CoreDataMethods.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		2FDA479E255D58CF00107E54 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				2FABD0D9255E51C400796B54 /* CoreData */,
 				2FABD09C255E336100796B54 /* NetworkReachability */,
 				2FDA479F255D58E800107E54 /* Helper.swift */,
 				2FABD0A5255E368700796B54 /* ActivityIndicator.swift */,
@@ -307,7 +335,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FABD0E7255E5A5D00796B54 /* InitialViewController.swift in Sources */,
 				2F7DAFD4255CEA9F00B64E6A /* LoginViewController.swift in Sources */,
+				2FABD0DB255E51D800796B54 /* CoreDataMethods.swift in Sources */,
 				2FDA47A4255D598700107E54 /* BaseViewController.swift in Sources */,
 				2FDA47A8255D59D300107E54 /* GlobalConstants.swift in Sources */,
 				2FDA47B0255D5D4600107E54 /* VideoPlayerViewController.swift in Sources */,
@@ -315,8 +345,10 @@
 				2FABD0A6255E368700796B54 /* ActivityIndicator.swift in Sources */,
 				2F7DAFBC255CE6FE00B64E6A /* AppDelegate.swift in Sources */,
 				2FABD09A255E2F2200796B54 /* VideoNetworkManager.swift in Sources */,
+				2FABD0D4255E4FB400796B54 /* VideoPlayerDB.xcdatamodeld in Sources */,
 				2FABD07F255E2AFA00796B54 /* Video.swift in Sources */,
 				2FABD09E255E338100796B54 /* Reachability.swift in Sources */,
+				2FABD0D7255E50BD00796B54 /* SignUpViewController.swift in Sources */,
 				2FDA47A0255D58E900107E54 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -519,6 +551,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2FABD0D2255E4FB400796B54 /* VideoPlayerDB.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2FABD0D3255E4FB400796B54 /* VideoPlayerDB.xcdatamodel */,
+			);
+			currentVersion = 2FABD0D3255E4FB400796B54 /* VideoPlayerDB.xcdatamodel */;
+			path = VideoPlayerDB.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2F7DAFB0255CE6FE00B64E6A /* Project object */;
 }

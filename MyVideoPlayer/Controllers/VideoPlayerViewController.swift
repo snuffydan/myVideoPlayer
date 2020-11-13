@@ -14,6 +14,7 @@ class VideoPlayerViewController: BaseViewController {
     @IBOutlet weak var videoView: UIView!
     
     var videos: [Video]?
+    var isVideoShown = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,10 @@ class VideoPlayerViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if isVideoShown {
+            self.navigationController?.popViewController(animated: false)
+        }
     }
     
     private func getVideos() {

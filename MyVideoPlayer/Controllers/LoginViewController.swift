@@ -20,8 +20,8 @@ class LoginViewController: BaseViewController {
         setUpView()
         
         // TODO:
-        usernameTextField.text = "kjhgf"
-        passwordTextField.text = "kjhgfghj"
+        usernameTextField.text = "admin"
+        passwordTextField.text = "admin"
     }
     
     private func setUpView() {
@@ -36,15 +36,26 @@ class LoginViewController: BaseViewController {
         if (usernameTextField.text == "" || passwordTextField.text == "") {
             self.showAlert(message: GlobalConstants.AlertMessages.EnterBothUsernamePassword.rawValue)
         } else {
-            let hotelListView = UIStoryboard(name: GlobalConstants.Storyboards.Main.rawValue, bundle: nil).instantiateViewController(withIdentifier: GlobalConstants.StoryboardIdentifiers.VideoPlayer.rawValue) as! VideoPlayerViewController
-            let navigationController = UINavigationController(rootViewController: hotelListView)
-            appDelegate.window?.rootViewController = navigationController
-            appDelegate.window?.makeKeyAndVisible()
+            let users = CoreDataMethods.getUserData()
             
-            self.addLogsToFirebaseWithParameters(eventName: GlobalConstants.FirebaseLogEvents.UserLoggedIn.rawValue, parameterName: "username", parameterValue: usernameTextField.text!)
+            for user in users {
+                if (user.username == usernameTextField.text && user.password == passwordTextField.text) {
+                    let videoPlayerVC = UIStoryboard(name: GlobalConstants.Storyboards.Main.rawValue, bundle: nil).instantiateViewController(withIdentifier: GlobalConstants.StoryboardIdentifiers.VideoPlayer.rawValue) as! VideoPlayerViewController
+                    let navigationController = UINavigationController(rootViewController: videoPlayerVC)
+                    appDelegate.window?.rootViewController = navigationController
+                    appDelegate.window?.makeKeyAndVisible()
+                    
+                    self.addLogsToFirebaseWithParameters(eventName: GlobalConstants.FirebaseLogEvents.UserLoggedIn.rawValue, parameterName: "username", parameterValue: usernameTextField.text!)
+                } else {
+                    showAlert(message: GlobalConstants.AlertMessages.InvalidCredentials.rawValue)
+                }
+            }
         }
     }
     
     @IBAction func signupUser(_ sender: Any) {
+        let signUpVC = UIStoryboard(name: GlobalConstants.Storyboards.Main.rawValue, bundle: nil).instantiateViewController(withIdentifier: GlobalConstants.StoryboardIdentifiers.SignUp.rawValue) as! SignUpViewController
+        signUpVC.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(signUpVC, animated: true)
     }
 }

@@ -7,6 +7,6 @@
 
 import UIKit
 
-class Response: Codable {
+struct Response: Codable {
     var data: [Video]
 }
