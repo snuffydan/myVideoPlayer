@@ -159,7 +159,39 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nxv-1h-gF7">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZ6-ao-AxU">
+                                        <rect key="frame" x="116.5" y="388" width="181" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Play Video Again"/>
+                                        <connections>
+                                            <action selector="playVideoAction:" destination="qoE-FX-FRS" eventType="touchUpInside" id="1PS-vN-yWk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H35-vW-rgj">
+                                        <rect key="frame" x="163.5" y="480" width="87" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Log Out"/>
+                                        <connections>
+                                            <action selector="logoutAction:" destination="qoE-FX-FRS" eventType="touchUpInside" id="nOo-Ci-7HK"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mTH-ao-dy1">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="mTH-ao-dy1" firstAttribute="leading" secondItem="nxv-1h-gF7" secondAttribute="leading" id="5yT-gk-SX7"/>
+                                    <constraint firstAttribute="trailing" secondItem="mTH-ao-dy1" secondAttribute="trailing" id="AuJ-Qv-t5o"/>
+                                    <constraint firstAttribute="bottom" secondItem="mTH-ao-dy1" secondAttribute="bottom" id="Ebv-a2-a8u"/>
+                                    <constraint firstItem="mTH-ao-dy1" firstAttribute="top" secondItem="nxv-1h-gF7" secondAttribute="top" id="FIZ-9t-f9e"/>
+                                    <constraint firstItem="H35-vW-rgj" firstAttribute="top" secondItem="zZ6-ao-AxU" secondAttribute="bottom" constant="50" id="S0A-bt-QLH"/>
+                                    <constraint firstItem="zZ6-ao-AxU" firstAttribute="centerX" secondItem="nxv-1h-gF7" secondAttribute="centerX" id="e9G-fK-eex"/>
+                                    <constraint firstItem="H35-vW-rgj" firstAttribute="centerX" secondItem="nxv-1h-gF7" secondAttribute="centerX" id="kLc-uH-8XB"/>
+                                    <constraint firstItem="zZ6-ao-AxU" firstAttribute="centerY" secondItem="nxv-1h-gF7" secondAttribute="centerY" id="zFc-ig-Mjb"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fCv-9v-ssj"/>
@@ -172,7 +204,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="videoView" destination="nxv-1h-gF7" id="Qdt-Tc-3qg"/>
+                        <outlet property="overlayView" destination="mTH-ao-dy1" id="6dQ-iA-tdp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hPP-8X-NF8" sceneMemberID="firstResponder"/>

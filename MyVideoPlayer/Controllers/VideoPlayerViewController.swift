@@ -11,25 +11,25 @@ import AVFoundation
 
 class VideoPlayerViewController: BaseViewController {
     
-    @IBOutlet weak var videoView: UIView!
+    @IBOutlet weak var overlayView: UIView!
     
     var videos: [Video]?
-    var isVideoShown = false
-
+    var videoUrl: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.addLogsToFirebase(eventName: GlobalConstants.FirebaseLogEvents.VideoPlayerOpened.rawValue)
-        
+        showOverlay()
         getVideos()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        if isVideoShown {
-            self.navigationController?.popViewController(animated: false)
-        }
+    private func showOverlay() {
+        overlayView.isHidden = false
+    }
+    
+    private func hideOverlay() {
+        overlayView.isHidden = true
     }
     
     private func getVideos() {
@@ -44,15 +44,16 @@ class VideoPlayerViewController: BaseViewController {
                 } else {
                     if let videos = result?.data {
                         self.videos = videos
-                        self.openVideo(videoUrl: videos[0].url ?? "")
+                        self.videoUrl = videos[0].url ?? ""
+                        self.openVideo()
                     }
                 }
             }
         }
     }
     
-    private func openVideo(videoUrl: String) {
-        if let url = URL(string: videoUrl) {
+    private func openVideo() {
+        if let url = URL(string: self.videoUrl ?? "") {
             let videoURL = url
             let player = AVPlayer(url: videoURL)
             let playerViewController = AVPlayerViewController()
@@ -61,19 +62,20 @@ class VideoPlayerViewController: BaseViewController {
 
             present(playerViewController, animated: true) {
                 player.play()
+                self.hideOverlay()
             }
-            
-            
-//            let asset = AVAsset(url: url)
-//            let playerItem = AVPlayerItem(asset: asset)
-//            let player = AVPlayer(playerItem: playerItem)
-//
-//            let playerLayer = AVPlayerLayer(player: player)
-//            playerLayer.frame = self.videoView.bounds
-//            playerLayer.videoGravity = .resizeAspect
-//            self.videoView.layer.addSublayer(playerLayer)
-//            player.play()
         }
+    }
+    
+    @IBAction func playVideoAction(_ sender: Any) {
+        self.openVideo()
+    }
+    
+    @IBAction func logoutAction(_ sender: Any) {
+        let loginVC = UIStoryboard(name: GlobalConstants.Storyboards.Main.rawValue, bundle: nil).instantiateViewController(withIdentifier: GlobalConstants.StoryboardIdentifiers.Login.rawValue) as! LoginViewController
+        let navigationController = UINavigationController(rootViewController: loginVC)
+        appDelegate.window?.rootViewController = navigationController
+        appDelegate.window?.makeKeyAndVisible()
     }
 }
 
