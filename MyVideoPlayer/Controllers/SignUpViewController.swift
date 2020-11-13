@@ -17,10 +17,6 @@ class SignUpViewController: BaseViewController {
         super.viewDidLoad()
         
         setUpView()
-        
-        // TODO:
-        usernameTextField.text = "admin"
-        passwordTextField.text = "admin"
     }
     
     private func setUpView() {
